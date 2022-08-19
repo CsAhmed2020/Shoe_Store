@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Shoe Store</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_log_in">Login</string>
+    <string name="action_create_new_login">New Login</string>
+    <string name="welcome_txt_first">Welcome In Shoe Store App</string>
+    <string name="welcome_txt_second">Go next to find more,Enjoy!</string>
+    <string name="action_next">Next</string>
+    <string name="log_out">Log out</string>
+    <string name="add_new_shoe">Add new Shoe</string>
+    <string name="prompt_shoe_name">Shoe Name</string>
+    <string name="prompt_shoe_company">Shoe Company</string>
+    <string name="prompt_shoe_size">Shoe Size</string>
+    <string name="prompt_shoe_description">Shoe Description</string>
+    <string name="action_save_shoe">Save</string>
+    <string name="error_login_msg">Please enter a valid email and password</string>
+    <string name="instruction_txt_first">This App show list of shoes</string>
+    <string name="instruction_txt_second">You can add more shoes, just click on add button.</string>
+    <string name="action_cancel_shoe">Cancel</string>
+</resources>
