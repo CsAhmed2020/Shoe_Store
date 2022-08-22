@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Use ConstraintLayout to constraint positioned-relation between attributes and spaces -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +10,7 @@
     tools:context=".screens.onboarding.InstructionsFragment"
     android:background="@drawable/instruction_background">
 
+    <!-- Use LinearLayout ho arrange two texts vertically -->
         <LinearLayout
             android:id="@+id/welcome_txt_layout"
             android:layout_width="match_parent"

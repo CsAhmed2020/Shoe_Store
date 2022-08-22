@@ -16,10 +16,13 @@
     app:cardCornerRadius="10dp"
     android:backgroundTint="@color/white">
 
+    <!-- Use LinearLayout ho arrange all text views vertically -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <!-- Use LinearLayout ho arrange name and size texts and their values text views horizontally -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,6 +68,8 @@
 
         </LinearLayout>
 
+
+        <!-- Use LinearLayout ho arrange two company and description texts horizontally with their  values -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

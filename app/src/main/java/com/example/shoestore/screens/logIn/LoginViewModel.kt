@@ -9,6 +9,8 @@ import com.example.shoestore.util.Validation
 class LoginViewModel : ViewModel() {
 
 
+    val userEmail = MutableLiveData<String>()
+    val userPassword = MutableLiveData<String>()
 
     private val _loginSuccess = MutableLiveData<Boolean>()
     val loginSuccess: LiveData<Boolean>
@@ -19,11 +21,11 @@ class LoginViewModel : ViewModel() {
         get() = _loginFailed
 
 
-    fun login(email:String , password : String){
-        if (Validation.validateLogin(email, password)){
+    fun login(){
+        if (Validation.validateLogin(userEmail.value, userPassword.value)){
             _loginFailed.value = false
-            Constants.EMAIL = email
-            Constants.PASSWORD = password
+            Constants.EMAIL = userEmail.value.toString()
+            Constants.PASSWORD = userPassword.value.toString()
             _loginSuccess.value = true
 
         }else {

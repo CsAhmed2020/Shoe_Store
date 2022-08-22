@@ -4,8 +4,8 @@ import android.util.Patterns
 
  object Validation {
 
-    fun validateLogin(email:String,password:String) : Boolean{
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
-                && password.isNotEmpty()
+    fun validateLogin(email: String?="", password: String?="") : Boolean{
+        return Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()
+                && !(password.isNullOrEmpty())
     }
 }

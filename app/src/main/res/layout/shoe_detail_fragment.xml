@@ -1,114 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.shoeDetail.ShoeDetailFragment"
-    android:background="@color/white">
 
-    <LinearLayout
+<layout>
+
+    <data>
+
+        <variable
+            name="shoeViewModel"
+            type="com.example.shoestore.screens.shoeListing.ShoeViewModel" />
+    </data>
+
+    <!-- Use ConstraintLayout to constraint positioned-relation between attributes and spaces -->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="start"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".screens.shoeDetail.ShoeDetailFragment">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add_new_shoe"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:textColor="@color/black"/>
-
-        <EditText
-            android:id="@+id/shoe_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/prompt_shoe_name"
-            android:textColor="@color/black"
-            android:textColorHint="@color/teal_700"
-            android:selectAllOnFocus="true"
-             />
-
-        <EditText
-            android:id="@+id/shoe_company"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/prompt_shoe_company"
-            android:textColor="@color/black"
-            android:textColorHint="@color/teal_700"
-            android:selectAllOnFocus="true"
-            />
-
-        <EditText
-            android:id="@+id/shoe_size"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/prompt_shoe_size"
-            android:textColor="@color/black"
-            android:textColorHint="@color/teal_700"
-            android:selectAllOnFocus="true"
-            />
-
-        <EditText
-            android:id="@+id/shoe_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/prompt_shoe_description"
-            android:selectAllOnFocus="true"
-            android:imeOptions="actionDone"
-            android:maxLines="5"
-            android:maxEms="25"
-            android:textColor="@color/black"
-            android:textColorHint="@color/teal_700"
-            />
-
+        <!-- Use LinearLayout ho arrange edit text attributes vertically -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            >
-            <Button
-                android:id="@+id/save_btn"
-                android:layout_width="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/action_save_shoe"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="50dp"
-                android:backgroundTint="@color/purple_700"
-                />
-            <Button
-                android:id="@+id/cancel_btn"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/add_new_shoe"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/shoe_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/action_cancel_shoe"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/purple_700"
-                />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="24dp"
+                android:hint="@string/prompt_shoe_name"
+                android:selectAllOnFocus="true"
+                android:text="@={shoeViewModel.shoeName}"
+                android:textColor="@color/black"
+                android:textColorHint="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/shoe_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                android:hint="@string/prompt_shoe_company"
+                android:selectAllOnFocus="true"
+                android:text="@={shoeViewModel.shoeCompany}"
+                android:textColor="@color/black"
+                android:textColorHint="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/shoe_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                android:hint="@string/prompt_shoe_size"
+                android:selectAllOnFocus="true"
+                android:text="@={shoeViewModel.shoeSize}"
+                android:textColor="@color/black"
+                android:textColorHint="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/shoe_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                android:hint="@string/prompt_shoe_description"
+                android:imeOptions="actionDone"
+                android:maxEms="25"
+                android:maxLines="5"
+                android:selectAllOnFocus="true"
+                android:text="@={shoeViewModel.shoeDescription}"
+                android:textColor="@color/black"
+                android:textColorHint="@color/teal_700" />
+
+            <!-- Use LinearLayout ho arrange two buttons horizontally -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/save_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/purple_700"
+                    android:onClick="@{() -> shoeViewModel.saveShoe()}"
+                    android:text="@string/action_save_shoe"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/cancel_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/purple_700"
+                    android:text="@string/action_cancel_shoe"
+                    android:textColor="@color/white"
+                    android:onClick="@{() -> shoeViewModel.cancelProcess(true)}"/>
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

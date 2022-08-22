@@ -36,9 +36,6 @@ class ShoeListingFragment : Fragment() {
         binding.addShoeFab.setOnClickListener {
             findNavController().navigate(ShoeListingFragmentDirections.actionShoeListingToShoeDetail())
         }
-        shoeViewModel.myShoeList.observe(viewLifecycleOwner, Observer {
-            Log.d("AhmedList",it.toString())
-        })
 
         val recyclerView = binding.shoeListingRv
         val adapter = shoeViewModel.myShoeList.value?.let { ShoeListingAdapter(it) }
