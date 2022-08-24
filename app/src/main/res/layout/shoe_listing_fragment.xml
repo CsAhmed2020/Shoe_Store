@@ -15,15 +15,17 @@
     tools:context=".screens.shoeListing.ShoeListingFragment"
     android:background="@color/white">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/shoeListing_rv"
-            tools:listitem="@layout/shoe_item"/>
+            android:orientation="vertical"
+            android:id="@+id/container">
+
+        </LinearLayout>
 
     </ScrollView>
 
